@@ -11,13 +11,13 @@
  <!-- End of head -->
   
  <!-- Start of body --> 
-  <body>
-    <script>
+  <body onload="draw();">
+  <script>
 			function toggler() {
 			   document.body.classList.toggle("dark-mode");	   
 			}
-		</script>
-		<button onclick="toggler()" style="position:absolute; top:0; left:0;">Toggle dark mode</button>
+  </script>
+  <button onclick="toggler()" style="position:absolute; top:0; left:0;">Toggle dark mode</button>
   <h1>
     Washington’s blog post is a semi-coherent rant that does more harm to the progress of inclusivity in computing than any sort of good it accomplishes.
   </h1>
@@ -34,21 +34,18 @@ Washington’s argument boils down to her expecting Ph.D’s of computer science
 
 Washington’s blog post is a semi-coherent rant that does more harm to the progress of inclusivity in computing than any sort of good it accomplishes.
   </p>
-  </body>
-  <!-- End of body --> 
 
-<body onload="draw();">
-  <canvas id="canvas"  width="400" height="400"></canvas>
 </body>
 <script>
-const range = 2 ;
-const full = range * 2 ;
-let x, y, j ;
-// tick marks - every size / range * 2 - snipped
-// scale pixels to (-2,2)
-for (let i = 0 ; i < size ; i++ )
-{
-	ctx.fillRect(i, j, 2, 2) ;
-}
+const size = 400 ;
+	const half = size / 2 ;
+	ctx.fillStyle = "dimgrey";	
+	for (let i = 0 ; i < size ; i++ )
+	{
+		ctx.fillRect(i, half, 1, 1) ;
+		ctx.fillRect(half, i, 1, 1) ;
+	}
 </script>
+</body>
+<!-- End of body --> 
 
