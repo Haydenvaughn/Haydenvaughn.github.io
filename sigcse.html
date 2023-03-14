@@ -35,7 +35,9 @@ Washington’s argument boils down to her expecting Ph.D’s of computer science
 Washington’s blog post is a semi-coherent rant that does more harm to the progress of inclusivity in computing than any sort of good it accomplishes.
   </p>
 <script>
-const size = 400 ;
+function draw()
+{        
+	const size = 400 ;
 	const half = size / 2 ;
 	ctx.fillStyle = "dimgrey";	
 	for (let i = 0 ; i < size ; i++ )
@@ -43,6 +45,7 @@ const size = 400 ;
 		ctx.fillRect(i, half, 1, 1) ;
 		ctx.fillRect(half, i, 1, 1) ;
 	}
+}
 </script>
 </body>
 <!-- End of body --> 
