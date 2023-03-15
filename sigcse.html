@@ -17,13 +17,10 @@
       function draw()
 {
 	const plot = document.getElementById("canvas") ;
-	const ctx = plot.getContext("2d");	
-	const range = 2 ;
-	const full = range * 2 ;
-for (let i = 0 ; i < size ; i++ )
-{
-	ctx.fillRect(i, j, 2, 2) ;
-}
+	const ctx = plot.getContext("2d");
+	ctx.fillStyle = "red";
+	ctx.fillRect(300, 400, 200, 100) ;
+
 }
     </script>
   <h1>
