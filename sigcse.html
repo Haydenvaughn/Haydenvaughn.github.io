@@ -11,13 +11,15 @@
  <!-- End of head -->
   
  <!-- Start of body --> 
-  <body>
-    <canvas id="myCanvas" width="200" height="100"></canvas>
+  <body onload="draw();">
+  <canvas id="canvas"  width="400" height="400"></canvas>
     <script>
-      var canvas = document.getElementById("myCanvas");
-      var ctx = canvas.getContext("2d");
-      ctx.fillStyle = "red"; // set fill color
-      ctx.fillRect(50, 25, 100, 50); // fill rectangle at x=50, y=25 with width=100, height=50
+      function draw()
+{
+	const plot = document.getElementById("canvas") ;
+	const ctx = plot.getContext("2d");	
+	ctx.fillRect(50, 50, 50, 50) ;
+}
     </script>
   <h1>
     Washington’s blog post is a semi-coherent rant that does more harm to the progress of inclusivity in computing than any sort of good it accomplishes.
