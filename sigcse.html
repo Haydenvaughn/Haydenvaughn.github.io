@@ -16,19 +16,14 @@
     <script>
       function draw()
 {
-	const range = 2 ;
-const full = range * 2 ;
-let x, y, j ;
-// tick marks - every size / range * 2 - snipped
-// scale pixels to (-2,2)
-for (let i = 0 ; i < size ; i++ )
-{
-	x = (i /   size) * full - range ;
-	y = utility(x) ;
-	j = ((range - y) / full) * size ;
-	ctx.fillRect(i, j, 2, 2) ;
-}
-
+	const size = 400 ;
+	const half = size / 2 ;
+	ctx.fillStyle = "dimgrey";	
+	for (let i = 0 ; i < size ; i++ )
+	{
+		ctx.fillRect(i, half, 1, 1) ;
+		ctx.fillRect(half, i, 1, 1) ;
+	}
 }
     </script>
   <h1>
