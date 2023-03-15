@@ -12,10 +12,12 @@
   
  <!-- Start of body --> 
   <body onload="draw();">
-  <canvas id="myCanvas" width="200" height="100"></canvas>
+  <canvas id="myCanvas" width="400" height="400"></canvas>
     <script>
       function draw()
 {
+	const plot = document.getElementById("myCanvas") ;
+	const ctx = plot.getContext("2d");	
 	const size = 400 ;
 	const half = size / 2 ;
 	ctx.fillStyle = "dimgrey";	
