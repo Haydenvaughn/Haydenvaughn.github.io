@@ -10,6 +10,35 @@
   </style>
  </head>
  <!-- End of head -->
+
+<canvas style="outline-style:solid;margin-right: auto;margin-left: auto;display: block;" id="display" width="800" height="800"></canvas>
+  
+var x ;
+var y ;
+var s ;
+var ctx ;
+var w ;
+var h ;
+
+document.addEventListener('keydown', keybind);
+
+function keybind()
+{
+  ctx.clearRect(0, 0, w, h);
+  const key = event.key;
+  switch (event.key) {
+	case "ArrowLeft":
+	case "a":
+		x = x - s > 0 - s ? x - s : x ;
+		break ;
+  const bool = x - s > 0 ;
+const someVal = x - s ;
+const otherVal = x ;
+x = bool ? someVal : otherVal ;
+  }
+	ctx.fillRect(x, y, s, s) ; // x y width height
+}
+
   
  <!-- Start of body --> 
   <body>
