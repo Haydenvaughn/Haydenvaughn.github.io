@@ -29,3 +29,54 @@
    Data scientists have a duty to not only be aware of potential unethical practices they could be partaking in, but must actively be fighting agaisn't 
    unethical data practices.
  </h1>
+
+    <script>
+
+let teams = ["Arizona Diamondbacks", "Atlanta Braves", "Baltimore Orioles", "Boston Red Sox", "Chicago Cubs", "Chicago White Sox", 
+             "Cincinnati Reds", "Cleveland Indians", "Colorado Rockies", "Detroit Tigers", "Houston Astros", "Kansas City Royals", 
+             "Los Angeles Angels", "Los Angeles Dodgers", "Miami Marlins", "Milwaukee Brewers", "Minnesota Twins", "New York Mets", "New York Yankees", 
+             "Oakland Athletics", "Philadelphia Phillies", "Pittsburgh Pirates", "San Diego Padres", "San Francisco Giants", "Seattle Mariners", 
+             "St. Louis Cardinals", "Tampa Bay Rays", "Texas Rangers", "Toronto Blue Jays", "Washington Nationals"]
+ ;
+
+let batAvg = 
+  [0.463, 0.292, 0.901, 0.172, 0.682, 0.562, 0.718, 0.013, 0.416, 0.822, 0.755, 0.448, 0.152, 0.628, 0.337, 0.099, 0.932, 0.777, 0.065, 0.300, 0.155, 
+   0.878, 0.768, 0.405, 0.051, 0.220, 0.529, 0.402, 0.960, 0.661, 0.652, 0.189];
+  
+  function iToDataPoint(labs,pts,i)
+{
+  let dataPoint = [] ;
+  for (let j = 0 ; j < pts.length ; j++)
+  {
+    dataPoint.push( { label: pts[j][0], y: pts[j][i+1] } ) ;
+  }
+  return {
+      type: "bar",
+      name: labs[i],
+      showInLegend: true,
+      yValueFormatString: "#,##0",
+      dataPoints: dataPoint
+    } ;
+}
+
+function makeData(labs,pts)
+{
+  let data = [] ;
+  for (let i = 0 ; i < labs.length ; i++)
+  {
+    data.push(iToDataPoint(labs,pts,i)) ;
+  }
+  return data ;
+}
+  
+function render() {
+  $("#chartStop").CanvasJSChart({title:{text: "MLB batting average data" }, data: makeData(teams,batAvg)});
+}
+</script>
+</head>
+<body onload="render()" >
+<div id="chartStop" style="height: 370px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>
