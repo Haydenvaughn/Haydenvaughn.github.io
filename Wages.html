@@ -48,7 +48,7 @@ let batAvg =
   for (let j = 0 ; j < pts.length ; j++)
   {
     dataPoint.push( { label: pts[j][0], y: pts[j][i+1] } ) ;
-      console.log(j) ;
+      console.log(dataPoint) ;
   }
   return {
       type: "bar",
@@ -64,7 +64,6 @@ function makeData(labs,pts)
   for (let i = 0 ; i < labs.length ; i++)
   {
     data.push(iToDataPoint(labs,pts,i)) ;
-    console.log(i) ;
   }
   return data ;
 }
